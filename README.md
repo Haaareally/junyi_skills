@@ -1,35 +1,55 @@
-# robot_deployment
+# junyi_skills
 
-可直接克隆使用的 Codex skill。规则包括中文沟通和报告、英文 Git commit 和代码注释、直白有条理的表达，以及将复查文档集中到项目的 `review/`、临时文件集中到 `tmp/`、一次性结果不保存。
+Junyi 的 Codex 技能集合。每个技能放在独立目录中，可以分别维护和调用，无需安装脚本或额外配置。
+
+## 目录结构
+
+```text
+junyi_skills/
+├── README.md
+├── .gitignore
+└── robot-deployment/
+    ├── SKILL.md
+    └── agents/
+        └── openai.yaml
+```
+
+当前包含 [robot-deployment](robot-deployment/SKILL.md)：机器人部署项目的中文沟通、清晰表达和文件管理规则。原有三条规则完整保留。
 
 ## 使用
 
-在机器人项目根目录执行：
+在要操作的项目根目录执行：
 
 ```bash
-git clone https://github.com/Haaareally/robot_deployment.git .agents/skills/robot-deployment
+git clone https://github.com/Haaareally/junyi_skills.git .agents/skills
 ```
 
-无需安装脚本、目录链接或额外配置。在该项目中开始新的 Codex 会话，然后输入：
+Git 会自动创建目录。如果项目已经有 `.agents/skills/`，将本集合克隆到它下面，保留其他技能：
+
+```bash
+git clone https://github.com/Haaareally/junyi_skills.git .agents/skills/junyi_skills
+```
+
+这两种位置都已验证能被 Codex 识别。在该项目中开始新会话，通过技能名调用：
 
 ```text
 $robot-deployment 按照这个技能的规则处理当前机器人部署项目。
 ```
 
-技能也允许在相关任务中自动选择；显式调用可以明确要求本次任务使用这些规则。仓库和显示名称为 `robot_deployment`，技能标识按规范使用 `robot-deployment`。
+Codex 会先了解各技能的名称、简介和位置，选中某个技能后再读取其完整规则；不会因为放在同一仓库就把所有技能正文一并加载。简介应简短，并明确适用任务。详见 [官方技能说明](https://learn.chatgpt.com/docs/build-skills)。
 
-本仓库根目录就是技能目录，完整规则见 [SKILL.md](SKILL.md)。`review/` 和 `tmp/` 属于机器人项目，不放在本技能目录中。
+## 更新与新增技能
 
-## 更新
-
-在机器人项目根目录执行：
+在项目根目录更新：
 
 ```bash
-git -C .agents/skills/robot-deployment pull --ff-only
+git -C .agents/skills pull --ff-only
 ```
 
-更新后开始新的 Codex 会话。修改规则只需编辑 `SKILL.md`，检查差异后用英文提交。
+如果使用子目录方式，将命令中的路径改为 `.agents/skills/junyi_skills`。更新后开始新的 Codex 会话。
 
-如果曾使用旧版安装脚本，请先移除它创建的 `.agents/skills/robot-deployment` 链接，再执行上面的克隆命令；只有确认目标是旧链接时才移除，不删除已有技能目录。
+新增技能时，在本仓库根目录创建独立文件夹，并写入带有 `name` 和 `description` 的 `SKILL.md`。文件夹和技能名称保持一致，使用小写字母、数字和连字符。需要时再增加 `agents/openai.yaml`、参考资料或脚本，不创建空占位目录。
 
-项目技能目录依据 [Codex 技能文档](https://developers.openai.com/codex/skills/)。
+技能修改使用英文 Git commit 信息。任务中的 `review/` 和 `tmp/` 属于正在操作的项目，不放在本技能集合中。
+
+如果已经克隆过旧版 `robot_deployment`，先保存本地改动，再按上述集合结构迁移；迁移后保留一份有效的 `robot-deployment` 技能，避免重复发现。不要覆盖已有目录或直接删除尚未保存的文件。

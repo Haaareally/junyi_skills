@@ -1,8 +1,8 @@
-# Track only the skill and its usage guide.
-/*
-!/.gitignore
-!/README.md
-!/SKILL.md
-!/agents/
-/agents/*
-!/agents/openai.yaml
+# Keep temporary files and local credentials out of the collection.
+.DS_Store
+tmp/
+__pycache__/
+*.pyc
+*.log
+.env
+.env.*
