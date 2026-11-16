@@ -1,4 +1,4 @@
 interface:
   display_name: "robot_deployment"
-  short_description: "机器人部署项目的中文沟通、清晰表达、复查文档与临时文件管理规范"
-  default_prompt: "使用 $robot-deployment，按中文沟通和统一文件管理的规则处理当前机器人部署项目。"
+  short_description: "机器人部署中的中文沟通、文件管理、模型任务匹配、风险警告与程序终止规范"
+  default_prompt: "使用 $robot-deployment，处理当前机器人部署项目，检查模型与任务是否匹配，突出严重风险，并确认程序有可用的安全停止方式。"
