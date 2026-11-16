@@ -21,7 +21,7 @@ junyi_skills/
 当前包含：
 
 - [read-and-explain](read-and-explain/SKILL.md)：用中文讲解论文、架构和算法，结合核心代码与必要的数学原理。显示名称为 `read_and_explain`，通过 `$read-and-explain` 调用。
-- [robot-deployment](robot-deployment/SKILL.md)：机器人部署项目的中文沟通、文件管理、模型任务匹配、严重风险警告、安全终止与完整任务程序交付规则。
+- [robot-deployment](robot-deployment/SKILL.md)：机器人部署项目的中文进度说明、`LOG.md` 日志、文件管理、模型任务匹配、严重风险警告、安全终止与完整任务程序交付规则。
 
 ## 使用
 
@@ -63,6 +63,6 @@ git -C .agents/skills pull --ff-only
 
 新增技能时，在本仓库根目录创建独立文件夹，并写入带有 `name` 和 `description` 的 `SKILL.md`。文件夹和技能名称保持一致，使用小写字母、数字和连字符。需要时再增加 `agents/openai.yaml`、参考资料或脚本，不创建空占位目录。
 
-技能修改使用英文 Git commit 信息。任务中的 `review/` 和 `tmp/` 属于正在操作的项目，不放在本技能集合中。
+技能修改使用英文 Git commit 信息。机器人部署任务的重要日志按时间追加到工作目录的 `LOG.md`，简明记录进度和当前问题；必要图片与数据可嵌入或链接，重要独立附件集中到项目的 `review/assets/`。复查材料只保留与重要决策、关键验证、问题定位或最终交付有关的内容，不加入零散调试输出、重复截图和无关中间结果。这些日志、`review/` 和 `tmp/` 都属于正在操作的项目，不放在本技能集合中。
 
 如果已经克隆过旧版 `robot_deployment`，先保存本地改动，再按上述集合结构迁移；迁移后保留一份有效的 `robot-deployment` 技能，避免重复发现。不要覆盖已有目录或直接删除尚未保存的文件。

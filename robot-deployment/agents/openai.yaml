@@ -1,4 +1,4 @@
 interface:
   display_name: "robot_deployment"
-  short_description: "机器人部署中的中文沟通、文件管理、风险警告、安全终止与完整任务程序交付规范"
-  default_prompt: "使用 $robot-deployment，检查模型任务匹配与运行风险，确认安全停止方式，并在检查无严重问题后交付能完整运行当前任务的程序。"
+  short_description: "机器人部署的中文进度说明、统一日志、风险警告、安全终止与完整任务交付规范"
+  default_prompt: "使用 $robot-deployment，先说清已做和未做的工作，将重要进展与问题追加到工作目录的 LOG.md，并在检查无严重问题且可安全停止后交付完整任务程序。"
