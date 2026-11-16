@@ -21,7 +21,7 @@ junyi_skills/
 当前包含：
 
 - [read-and-explain](read-and-explain/SKILL.md)：用中文讲解论文、架构和算法，结合核心代码与必要的数学原理。显示名称为 `read_and_explain`，通过 `$read-and-explain` 调用。
-- [robot-deployment](robot-deployment/SKILL.md)：机器人部署项目的中文沟通、文件管理、模型任务匹配、严重风险警告与程序终止规则。
+- [robot-deployment](robot-deployment/SKILL.md)：机器人部署项目的中文沟通、文件管理、模型任务匹配、严重风险警告、安全终止与完整任务程序交付规则。
 
 ## 使用
 
