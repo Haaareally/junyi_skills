@@ -1,0 +1,15 @@
+# Track only distributable files at the repository root.
+/*
+!/.gitignore
+!/README.md
+!/install.sh
+!/skills/
+
+# Ignore temporary outputs inside skill directories as well.
+.DS_Store
+tmp/
+__pycache__/
+*.pyc
+*.log
+.env
+.env.*
