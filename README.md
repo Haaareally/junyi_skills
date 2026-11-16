@@ -8,13 +8,20 @@ Junyi 的 Codex 技能集合。每个技能放在独立目录中，可以分别�
 junyi_skills/
 ├── README.md
 ├── .gitignore
+├── read-and-explain/
+│   ├── SKILL.md
+│   └── agents/
+│       └── openai.yaml
 └── robot-deployment/
     ├── SKILL.md
     └── agents/
         └── openai.yaml
 ```
 
-当前包含 [robot-deployment](robot-deployment/SKILL.md)：机器人部署项目的中文沟通、清晰表达和文件管理规则。原有三条规则完整保留。
+当前包含：
+
+- [read-and-explain](read-and-explain/SKILL.md)：用中文讲解论文、架构和算法，结合核心代码与必要的数学原理。显示名称为 `read_and_explain`，通过 `$read-and-explain` 调用。
+- [robot-deployment](robot-deployment/SKILL.md)：机器人部署项目的中文沟通、清晰表达和文件管理规则。
 
 ## 使用
 
@@ -34,6 +41,12 @@ git clone https://github.com/Haaareally/junyi_skills.git .agents/skills/junyi_sk
 
 ```text
 $robot-deployment 按照这个技能的规则处理当前机器人部署项目。
+```
+
+阅读论文或代码时，可以这样调用：
+
+```text
+$read-and-explain 帮我读懂这篇论文，按输入到输出的顺序讲清架构，并结合仓库中的核心代码和必要公式解释。
 ```
 
 Codex 会先了解各技能的名称、简介和位置，选中某个技能后再读取其完整规则；不会因为放在同一仓库就把所有技能正文一并加载。简介应简短，并明确适用任务。详见 [官方技能说明](https://learn.chatgpt.com/docs/build-skills)。

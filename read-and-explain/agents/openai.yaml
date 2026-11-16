@@ -1,0 +1,4 @@
+interface:
+  display_name: "read_and_explain"
+  short_description: "用中文直白讲解论文与架构，结合核心代码和必要的数学原理"
+  default_prompt: "使用 $read-and-explain，讲清这篇论文解决的问题和方法，按逻辑顺序结合核心代码与必要数学解释架构。"
