@@ -12,7 +12,11 @@ junyi_skills/
 │   ├── SKILL.md
 │   └── agents/
 │       └── openai.yaml
-└── robot-deployment/
+├── robot-deployment/
+│   ├── SKILL.md
+│   └── agents/
+│       └── openai.yaml
+└── survey-and-discuss/
     ├── SKILL.md
     └── agents/
         └── openai.yaml
@@ -22,6 +26,7 @@ junyi_skills/
 
 - [read-and-explain](read-and-explain/SKILL.md)：用中文讲解论文、架构和算法，结合核心代码与必要的数学原理。显示名称为 `read_and_explain`，通过 `$read-and-explain` 调用。
 - [robot-deployment](robot-deployment/SKILL.md)：机器人部署项目的中文进度说明、`LOG.md` 日志、文件管理、模型任务匹配、严重风险警告、安全终止与完整任务程序交付规则。
+- [survey-and-discuss](survey-and-discuss/SKILL.md)：目标明确时聚焦检索，开放构思时跨方向探索；审核证据，用直白中文结合底层原理解释，并以独立判断推进技术讨论。
 
 ## 使用
 
@@ -47,6 +52,12 @@ $robot-deployment 按照这个技能的规则处理当前机器人部署项目�
 
 ```text
 $read-and-explain 帮我读懂这篇论文，按输入到输出的顺序讲清架构，并结合仓库中的核心代码和必要公式解释。
+```
+
+调研方向或探讨想法时，可以这样调用：
+
+```text
+$survey-and-discuss 我想探索这个方向，请适度跨领域检索，讲清有价值的思路、依据与分歧，并和我讨论下一步值得验证什么。
 ```
 
 Codex 会先了解各技能的名称、简介和位置，选中某个技能后再读取其完整规则；不会因为放在同一仓库就把所有技能正文一并加载。简介应简短，并明确适用任务。详见 [官方技能说明](https://learn.chatgpt.com/docs/build-skills)。
