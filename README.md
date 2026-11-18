@@ -48,6 +48,12 @@ git clone https://github.com/Haaareally/junyi_skills.git .agents/skills/junyi_sk
 $robot-deployment 按照这个技能的规则处理当前机器人部署项目。
 ```
 
+也可以在已安装技能的机器人项目根目录，从终端发起 README 更新。
+
+```bash
+codex '$robot-deployment 根据当前项目的真实入口更新 README，用终端演示怎么启动服务、调整常用参数、确认就绪、调用主要功能和停止服务。'
+```
+
 阅读论文或代码时，可以这样调用：
 
 ```text
@@ -61,6 +67,29 @@ $survey-and-discuss 我想探索这个方向，请适度跨领域检索，逐项
 ```
 
 Codex 会先了解各技能的名称、简介和位置，选中某个技能后再读取其完整规则；不会因为放在同一仓库就把所有技能正文一并加载。简介应简短，并明确适用任务。详见 [官方技能说明](https://learn.chatgpt.com/docs/build-skills)。
+
+## 用终端预览部署规则
+
+在本技能仓库根目录打开终端 1，用 Python 3 启动文档预览服务并保持运行。
+
+```bash
+python3 -m http.server 8765 --bind 127.0.0.1 --directory robot-deployment
+```
+
+`8765` 是端口（默认 `8000`），`--bind 127.0.0.1` 只接受本机连接，`--directory robot-deployment` 指定要展示的目录。端口已占用时可换一个空闲端口，并同步修改下面的网址。
+
+在终端 2 读取规则文件并查看技能名。
+
+```bash
+curl -fsS http://127.0.0.1:8765/SKILL.md | sed -n '1,2p'
+```
+
+```text
+---
+name: robot-deployment
+```
+
+看到技能名表示预览服务已能提供文件。回到终端 1 按 `Ctrl+C` 停止服务。
 
 ## 更新与新增技能
 
