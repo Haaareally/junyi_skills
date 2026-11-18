@@ -1,4 +1,4 @@
 interface:
   display_name: "survey-and-discuss"
-  short_description: "聚焦检索与跨领域构思，审核证据，用直白中文和独立判断深入讨论"
-  default_prompt: "使用 $survey-and-discuss，围绕我的目标选择聚焦检索或跨方向探索，审核证据，结合底层原理讲清思路，并提出有价值的分歧和验证方向。"
+  short_description: "聚焦检索与跨领域构思，讲透具体方法、原理和创新，审核证据并独立讨论"
+  default_prompt: "使用 $survey-and-discuss，围绕我的目标调研，逐项讲清工作要做什么、具体方法与原理、改进了什么，最后简述效果，再讨论分歧与验证方向。"
