@@ -1,0 +1,4 @@
+interface:
+  display_name: "train"
+  short_description: "讲清训练架构与特征含义，按指定显卡运行，管理调参、进度与实验记录"
+  default_prompt: "使用 $train，结合当前项目讲清模型架构、特征含义和训练方案，整理运行入口，并在启动前确认本次可用的 GPU ID。"

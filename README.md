@@ -16,7 +16,11 @@ junyi_skills/
 │   ├── SKILL.md
 │   └── agents/
 │       └── openai.yaml
-└── survey-and-discuss/
+├── survey-and-discuss/
+│   ├── SKILL.md
+│   └── agents/
+│       └── openai.yaml
+└── train/
     ├── SKILL.md
     └── agents/
         └── openai.yaml
@@ -27,6 +31,7 @@ junyi_skills/
 - [read-and-explain](read-and-explain/SKILL.md)：用中文讲解论文、架构和算法，结合核心代码与必要的数学原理。显示名称为 `read_and_explain`，通过 `$read-and-explain` 调用。
 - [robot-deployment](robot-deployment/SKILL.md)：机器人部署项目的中文进度说明、`LOG.md` 日志、文件管理、模型任务匹配、严重风险警告、安全终止与完整任务程序交付规则。
 - [survey-and-discuss](survey-and-discuss/SKILL.md)：目标明确时聚焦检索，开放构思时跨方向探索；审核证据后逐项讲清具体方法、核心机制与改进，最后简述实验效果，再横向比较并独立讨论。
+- [train](train/SKILL.md) 用于模型训练、续训和调参。它按数据流讲清架构与特征含义，在指定显卡上运行，管理实时进度、实验日志和检查点。
 
 ## 使用
 
@@ -67,6 +72,12 @@ $survey-and-discuss 我想探索这个方向，请适度跨领域检索，逐项
 ```
 
 Codex 会先了解各技能的名称、简介和位置，选中某个技能后再读取其完整规则；不会因为放在同一仓库就把所有技能正文一并加载。简介应简短，并明确适用任务。详见 [官方技能说明](https://learn.chatgpt.com/docs/build-skills)。
+
+准备训练项目时，可以直接从方案讨论开始。
+
+```text
+$train 根据当前项目讲清模型怎样从输入学到目标，整理训练入口、验证指标和调参方案。到需要启动训练时，先确认我给出的 GPU ID。
+```
 
 ## 用终端预览部署规则
 
