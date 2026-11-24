@@ -20,7 +20,11 @@ junyi_skills/
 │   ├── SKILL.md
 │   └── agents/
 │       └── openai.yaml
-└── train/
+├── train/
+│   ├── SKILL.md
+│   └── agents/
+│       └── openai.yaml
+└── update-codex/
     ├── SKILL.md
     └── agents/
         └── openai.yaml
@@ -32,6 +36,7 @@ junyi_skills/
 - [robot-deployment](robot-deployment/SKILL.md)：机器人部署项目的中文进度说明、`LOG.md` 日志、文件管理、模型任务匹配、严重风险警告、安全终止与完整任务程序交付规则。
 - [survey-and-discuss](survey-and-discuss/SKILL.md)：目标明确时聚焦检索，开放构思时跨方向探索；审核证据后逐项讲清具体方法、核心机制与改进，最后简述实验效果，再横向比较并独立讨论。
 - [train](train/SKILL.md) 用于模型训练、续训和调参。它按数据流讲清架构与特征含义，在指定显卡上运行，管理实时进度、实验日志和检查点。
+- [update-codex](update-codex/SKILL.md) 用于更新 Codex CLI 和共享后台，排查升级后模型缺失，并从默认交互界面的 `/model` 和 `/status` 验收。
 
 ## 使用
 
@@ -77,6 +82,12 @@ Codex 会先了解各技能的名称、简介和位置，选中某个技能后�
 
 ```text
 $train 根据当前项目讲清模型怎样从输入学到目标，整理训练入口、验证指标和调参方案。到需要启动训练时，先确认我给出的 GPU ID。
+```
+
+升级后找不到模型时，可以先做只读排查。
+
+```text
+$update-codex 帮我检查升级后默认 /model 菜单为什么缺少目标模型。先核对 CLI、后台和登录状态，暂不重启。
 ```
 
 ## 用终端预览部署规则

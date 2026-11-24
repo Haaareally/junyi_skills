@@ -1,0 +1,4 @@
+interface:
+  display_name: "update-codex"
+  short_description: "核对并更新 Codex CLI 与共享后台，通过默认模型菜单验收"
+  default_prompt: "使用 $update-codex，检查 Codex CLI 和共享后台版本，更新后通过默认 /model 菜单和 /status 核对目标模型。"
